@@ -4,6 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>my-project</title>
+	<script type="text/javascript">
+		$(function(){
+			var $dialog1 = $('#js_dialog_1'),
+			    $dialog2 = $('#js_dialog_2'),
+			    $iosDialog1 = $('#iosDialog1'),
+			    $iosDialog2 = $('#iosDialog2');
+
+			$('#dialogs').on('click', '.weui-mask', function(){
+			    $(this).parents('.js_dialog').fadeOut(200);
+			    $dialog1.removeClass('weui-half-screen-dialog_show');
+			    $dialog2.removeClass('weui-half-screen-dialog_show');
+			});
+
+			$('#showIOSDialog1').on('click', function(){
+			    $iosDialog1.fadeIn(200);
+			    $dialog1.addClass('weui-half-screen-dialog_show');
+			});
+			$('#showIOSDialog2').on('click', function(){
+			    $iosDialog2.fadeIn(200);
+			    $dialog2.addClass('weui-half-screen-dialog_show');
+			});
+		});
+	</script>
   </head>
   <body style='margin:0px;overflow-x: hidden;'>   
     <div id="app"></div>
